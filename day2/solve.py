@@ -26,10 +26,10 @@ def part2(input_gen):
     }
     for input in input_gen:
         match input:
-            case tuple((('up'|'down') as direction, magnitude)):
+            case ('up'|'down') as direction, magnitude:
                 aim_delta = magnitude * aim_map[direction]
                 aim += aim_delta
-            case tuple(('forward', magnitude)):
+            case 'forward', magnitude:
                 x += magnitude
                 y += (magnitude * aim)
     return x*y
